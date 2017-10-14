@@ -1,0 +1,10 @@
+digraph g {
+  waiting [
+    label = "waiting"
+    shape = doublecircle
+  ];
+  waiting -> "measuring" [label = "Push start"]
+  "measuring" -> "paused" [label = "Push stop"]
+  "paused" -> "measuring" [label = "Push start"]
+  "paused" -> waiting [label = "Push reset"]
+}
